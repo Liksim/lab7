@@ -22,12 +22,12 @@ print('Amount of females:',data[data['type']=='F']['humanID'].nunique()) #commit
 print('Amount of children:',data[data['type']=='C']['humanID'].nunique()) #commit d
 
 
-corona = data[data['isCoronavirus'] == 'Yes']
-print("Людей, болевших коронавирусом:",corona['humanID'].nunique())
+corona = data[data['isNotCoronavirus'] == 'Нет'] #commit e
+print("Людей, не болевших коронавирусом:",corona['humanID'].nunique()) #commit e
 
 
-lungInjury = data[data['isLungInjury'] == 'Yes']
-print("Людей с поражением легких:",lungInjury['humanID'].nunique())
+lungInjury = data[data['isNotLungInjury'] == 'Нет'] #commit e
+print("Людей без поражения легких:",lungInjury['humanID'].nunique()) #commit e
 
 
 #Функция создает таблицу с вычесленными векторами и их изменением
