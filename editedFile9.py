@@ -33,9 +33,9 @@ print("People without lung damage:",lungInjury['humanID'].nunique()) #commit f
 #Функция создает таблицу с вычесленными векторами и их изменением
 def makeVectorTableOther(dfdata):
     n = 10 #Для скользящего среднего
-    leng1 = nump.sqrt(dfdata['X3']**2 + dfdata['Y3']**2 + dfdata['Z3']**2) #commit g
-    leng2 = nump.sqrt(dfdata['X1']**2 + dfdata['Y1']**2 + dfdata['Z1']**2) #commit g
-    leng3 = nump.sqrt(dfdata['X2']**2 + dfdata['Y2']**2 + dfdata['Z2']**2) #commit g
+    leng1 = nump.sqrt(dfdata['X2']**2 + dfdata['Y2']**2 + dfdata['Z2']**2) #commit h
+    leng2 = nump.sqrt(dfdata['X3']**2 + dfdata['Y3']**2 + dfdata['Z3']**2) #commit h
+    leng3 = nump.sqrt(dfdata['X1']**2 + dfdata['Y1']**2 + dfdata['Z3']**2) #commit h
     vecData = pand.DataFrame({'Time': dfdata['Time'], #commit g
                            'RawVectorLen1': np.sqrt((dfdata['X1'].rolling(window=n).mean())**2 + (dfdata['Y1'].rolling(window=n).mean())**2 + (dfdata['Z1'].rolling(window=n).mean())**2),
                            'RawVectorLen2': np.sqrt((dfdata['X2'].rolling(window=n).mean())**2 + (dfdata['Y2'].rolling(window=n).mean())**2 + (dfdata['Z2'].rolling(window=n).mean())**2),
