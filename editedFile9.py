@@ -17,8 +17,9 @@ data = pd.read_excel('actors.xls')
 data
 
 
-print('Кол-во мужчин:',data[data['sex']=='M']['humanID'].nunique())
-print('Кол-во женщин:',data[data['sex']=='F']['humanID'].nunique())
+print('Количество мужчин:',data[data['sex']=='M']['humanID'].nunique()) #commit c
+print('Количество женщин:',data[data['sex']=='F']['humanID'].nunique()) #commit c
+print('Количество детей:',data[data['sex']=='C']['humanID'].nunique()) #commit c
 
 
 corona = data[data['isCoronavirus'] == 'Yes']
