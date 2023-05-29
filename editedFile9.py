@@ -1,6 +1,6 @@
-import pandas as pand               #commit a
-import matplotlib.pyplot as plot    #commit a
-import numpy as nump                #commit a
+import pandas as panda               #commit b
+import matplotlib.pyplot as pyplot    #commit b
+import numpy as num                #commit b
 from scipy import stats
 import seaborn as sns
 import math as m
