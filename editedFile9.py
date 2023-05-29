@@ -36,10 +36,10 @@ def makeVectorTableOther(dfdata):
     leng1 = num.sqrt(dfdata['X2']**2 + dfdata['Y2']**2 + dfdata['Z2']**2) #commit i
     leng2 = num.sqrt(dfdata['X3']**2 + dfdata['Y3']**2 + dfdata['Z3']**2) #commit i
     leng3 = num.sqrt(dfdata['X1']**2 + dfdata['Y1']**2 + dfdata['Z1']**2) #commit i
-    vecData = pand.DataFrame({'Timing': dfdata['Timing'], #commit i
-                           'RawVectorLen1': np.sqrt((dfdata['X1'].rolling(window=n).mean())**2 + (dfdata['Y1'].rolling(window=n).mean())**2 + (dfdata['Z1'].rolling(window=n).mean())**2),
-                           'RawVectorLen2': np.sqrt((dfdata['X2'].rolling(window=n).mean())**2 + (dfdata['Y2'].rolling(window=n).mean())**2 + (dfdata['Z2'].rolling(window=n).mean())**2),
-                           'RawVectorLen3': np.sqrt((dfdata['X3'].rolling(window=n).mean())**2 + (dfdata['Y3'].rolling(window=n).mean())**2 + (dfdata['Z3'].rolling(window=n).mean())**2),
+    vecData = panda.DataFrame({'Timout': dfdata['Timout'], #commit j
+    'RawVectorLen1': num.sqrt((dfdata['X2'].rolling(window=n).mean())**2 + (dfdata['Y2'].rolling(window=n).mean())**2 + (dfdata['Z2'].rolling(window=n).mean())**2), #commit j
+    'RawVectorLen2': num.sqrt((dfdata['X3'].rolling(window=n).mean())**2 + (dfdata['Y3'].rolling(window=n).mean())**2 + (dfdata['Z3'].rolling(window=n).mean())**2), #commit j
+    'RawVectorLen3': num.sqrt((dfdata['X1'].rolling(window=n).mean())**2 + (dfdata['Y1'].rolling(window=n).mean())**2 + (dfdata['Z1'].rolling(window=n).mean())**2), #commit j
                            'Vector3To1': np.sqrt(leng3**2 + leng1**2 - 2 * leng3 * leng1 * cossin(dfdata)),
                            'Vector3To2': np.sqrt(leng3**2 + leng2**2 - 2 * leng3 * leng2 * cossin(dfdata)),
                            'Vector1To2': np.sqrt(leng1**2 + leng2**2 - 2 * leng2 * leng1 * cossin(dfdata))})
